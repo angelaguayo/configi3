@@ -1,0 +1,15 @@
+#
+
+#
+
+#configuracion Angelaguayo
+#i3
+
+#dependencias
+
+i3-gaps-netxt-git
+i3blocks-git 
+i3blocks-gaps
+feh
+compton
+

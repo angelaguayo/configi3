@@ -1,0 +1,183 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# background
+# border
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/local/libexec/i3blocks/$BLOCK_NAME
+#separator_block_width=15
+#markup=none
+
+full_text=
+align=center
+separator=false
+separator_block_width=0
+color=#005f87
+markup=pango
+
+border_left=0
+border_right=0
+border_top=8
+border_bottom=8
+border=#005f87 #151617
+
+[separator2]
+full_text=<span foreground="#00FF00"></span>
+markup=pango
+border=#212121
+
+# Display current song
+[mediaplayer]
+label=
+command=printf "\\u266A " && /home/angelaguayo/.config/i3/media
+instance=spotify
+interval=5
+signal=10
+color=#000000
+background=#30BB94
+border=#30BB94
+border_right=3
+
+[separator2]
+full_text=<span background="#00FF00" foreground="#00E1FF"></span>
+markup=pango
+border=#00FF00
+
+[host]
+label=
+command=uname -r
+color=#000000
+background=#30BB94
+border=#30BB94
+interval=once
+border_right=3
+
+[separator3]
+full_text=<span background="#00e1ff" foreground="#ef6191"></span>
+markup=pango
+border=#00E1FF
+
+# Free space of home
+[home]
+label=
+command=/usr/lib/i3blocks/disk $HOME
+instance=/home/
+interval=60
+color=#000000
+background=#ef6191
+border=#ef6191
+border_right=3
+
+[separator4]
+full_text=<span background="#ef6191" foreground="#0EF74C"></span>
+markup=pango
+border=#ef6191
+
+[memory]
+label=
+command=/usr/lib/i3blocks/memory
+color=#000000
+background=#0EF74C
+border=#0EF74C
+instance=mem
+interval=30
+#separator=true
+
+[separator5]
+full_text=<span background="#0EF74C" foreground="#ffb64c"></span>
+markup=pango
+border=#0EF74C
+
+# Volume indicator
+[volume]
+label=
+instance=Master
+interval=1
+signal=10
+color=#000000
+background=#ffb64c
+border=#ffb64c
+
+[separator6]
+full_text=<span background="#ffb64c" foreground="#ff2b00"></span>
+markup=pango
+border=#ffb64c
+
+# Battery indicator
+[battery]
+command=/home/angelaguayo/.config/i3/battery
+label=
+interval=30
+color=#000000
+background=#FF2B00
+border=#ff2b00
+
+[separator7]
+full_text=<span background="#FF2B00" foreground="#0E0000"></span>
+markup=pango
+border=#FF2B00
+
+# Wifi signal strenght
+[wifi]
+label=
+#command=nmcli g
+instance=wlp2s0
+color=#000000
+background=#0E0000
+border=#000000
+interval=5
+
+[iface]
+#instance=wlan0
+color=#00FF00
+interval=10
+separator=false
+background=#0E0000
+
+[separator8]
+full_text=<span background="#0E0000" foreground="#ef6191"></span>
+markup=pango
+border=#0E0000
+
+# Time
+[time]
+command=printf "\\uf017 " && date '+%I:%M' 
+interval=5
+color=#000000
+background=#ef6191
+border=#ef6191
+
+[separator9]
+full_text=<span background="#ef6191" foreground="#ffb64c"></span>
+markup=pango
+border=#ef6191
+
+# Date
+[date]
+command=printf "\\uf073 " && date '+%A %e de %B' 
+interval=60
+color=#000000
+background=#ffb64c
+border=#ffb64c
